@@ -12,12 +12,12 @@ const char * tokenTypeStr[9] = {
     "KeyWord",
     "Operator",
     "Seperator",
-    "Unknown"
+    "Error"
 };
 
 Token::Token()
 {
-    _type = Unknown;
+    _type = Error;
     _attr = '-';
 }
 

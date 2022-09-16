@@ -18,7 +18,7 @@ enum TokenType{
     KeyWord,
     Operator,
     Seperator,
-    Unknown
+    Error
 };
 
 
