@@ -4,6 +4,8 @@
 
 #include <fstream>
 #include "token.h"
+#include "buffer.h"
+#include "cursor.h"
 using namespace std;
 
 namespace LexicalAnalysis
@@ -13,21 +15,16 @@ class Reader
 {
 public:
     Reader(const char *filePath, unsigned int bufferSize=1000);
-    int getToken(Token& nextToken);
-    ~Reader();
-
+    int getToken(Token& nextToken, Cursor& curLoction);
+    unsigned int getCharNum();
+    unsigned int getLineNum();
 private:
-    char forward();
+    char forward(int check, unsigned int step);
     void skipBlankComment();
-    inline unsigned int fillLeftBuffer();
-    inline unsigned int fillRightBuffer();
-
-    ifstream sourceFile;
-    unsigned int begin;
-    unsigned int end;
+    Token digitsError();
+    Cursor begin, end;
+    Buffer buffer;
     unsigned int _bufferSize;
-    char *leftBuffer;
-    char *rightBuffer;
 };
 }
 

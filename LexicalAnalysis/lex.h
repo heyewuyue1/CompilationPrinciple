@@ -4,12 +4,23 @@ using namespace std;
 
 namespace LexicalAnalysis
 {
-    // 要实现符号表
+
+typedef struct TableItem
+{
+    Token token;
+    Cursor loc;
+} TableItem;
+
 class Lex {
 public:
-    analysis();
-
+    void analysis();
+    Lex(const char *);
+    void printRes();
 private:
-    vector<Token> tokenTable;
+    vector<TableItem> _tokenTable;
+    unsigned int tokenNum[9];
+    Reader _reader;
+    unsigned int lines;
+    unsigned int charNum;
 };
 } // namespace LexicalAnalysis

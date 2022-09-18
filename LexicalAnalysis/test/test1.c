@@ -1,13 +1,13 @@
-int main()
+ont main()
 {
-    int a = sizeof(a);
-    int b = 8u;
-    a >>[]= b;  +// this is a comment
+    int a0+j = sizeof(a);
+    float b = 0x1uLf, c = 5.8;
+    // a >>[]= b;  +// this is a comment
     //
     //
     /* **
     return 0;
     */
-   a = "cdddd"
+    a = "cdddd";
     return 0;
 }

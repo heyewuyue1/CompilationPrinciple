@@ -49,7 +49,7 @@ void Token::setAttr(string attr)
 
 ostream& operator<<(ostream &cout, const Token& token)
 {
-    cout << '<' << tokenTypeStr[*(int*)&token._type] << ", " << token._attr << '>' << endl;
+    cout << '<' << tokenTypeStr[*(int*)&token._type] << ", " << token._attr << '>';
     return cout;
 }
 

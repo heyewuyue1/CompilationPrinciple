@@ -1,0 +1,35 @@
+<Identifier, ont>:1:1
+<Identifier, main>:1:5
+<Seperator, Left Parenthesis>:1:9
+<Seperator, Right Parenthesis>:1:10
+<Seperator, Left Brace>:2:1
+<KeyWord, int>:3:5
+<Identifier, a>:3:9
+<Operator, Assignment>:3:11
+<Operator, Size of>:3:13
+<Seperator, Left Parenthesis>:3:19
+<Identifier, a>:3:20
+<Seperator, Right Parenthesis>:3:21
+<Seperator, Semicolon>:3:22
+<KeyWord, float>:4:5
+<Identifier, b>:4:11
+<Operator, Assignment>:4:13
+<Error, Invalid number '0x1uLf'>:4:15
+<Seperator, Comma>:4:21
+<Identifier, c>:4:23
+<Operator, Assignment>:4:25
+<Int, 5;>:4:27
+<KeyWord, return>:9:5
+<Int, 0;>:9:12
+<Operator, Star>:10:5
+<Identifier, a>:11:5
+<Operator, Assignment>:11:7
+<String, cdddd>:11:9
+<Seperator, Semicolon>:11:16
+<KeyWord, return>:12:5
+<Int, 0;>:12:12
+<Seperator, Right Brace>:13:1
+[Statics]
+Total characters: 183
+Total lines: 13
+Total tokens: 31
