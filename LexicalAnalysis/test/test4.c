@@ -1,11 +1,3 @@
-#include <stdio.h>
-#define LL long long
-#define NAME(n)         \
-    int name(n)         \
-    {                   \
-        return name##n; \
-    }
-
 typedef struct Node
 {
     int a, b;
@@ -51,9 +43,6 @@ int main(int argc, char *argv[])
     node.a = m++ + x;
     _Complex n;
     goto label;
-#ifndef what
-#define what
-#endif
     char *str = "str/*comment*/";
 label:
     if (y != z)

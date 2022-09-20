@@ -2,7 +2,12 @@
 #define isLetter(c) ((c) == '_' || ('a' <= (c) && 'z' >= (c)) || ('A' <= (c) && 'Z' >= (c)))
 #define isDigit(c) ('0' <= (c) && '9' >= (c))
 #define isBlank(c) ((c) == ' ' || (c) == '\n')
-
+#define OCT_REGEX "0[0-7]*(u|l|ul|uL|Ul|UL|lu|lU|Lu|LU|LL|ll|ull|uLL|Ull|ULL|llu|llU|LLu|LLU)?"
+#define HEX_FLOAT_REGEX "0(x|X)[[:xdigit:]]+(\\.[[:xdigit:]]+)?(p|P)[-,+]?[0-9]+(f|F|l|L)?"
+#define HEX_INT_REGEX "0(x|X)[[:xdigit:]]+(u|l|ul|uL|Ul|UL|lu|lU|Lu|LU|LL|ll|ull|uLL|Ull|ULL|llu|llU|LLu|LLU)?"
+#define BIN_REGEX "0(b|B)(0|1)+(u|l|ul|uL|Ul|UL|lu|lU|Lu|LU|LL|ll|ull|uLL|Ull|ULL|llu|llU|LLu|LLU)?"
+#define DEC_INT_REGEX "[1-9][0-9]*(u|l|ul|uL|Ul|UL|lu|lU|Lu|LU|LL|ll|ull|uLL|Ull|ULL|llu|llU|LLu|LLU)?"
+#define DEC_FLOAT_REGEX "[0-9]*((\\.[0-9]*)|((e|E)[-,+]?[0-9]*)|(\\.[0-9]*)((e|E)[-,+]?[0-9]*))(f|F|l|L)?"
 
 
 namespace LexicalAnalysis
@@ -26,9 +31,8 @@ int Reader::getToken(Token& nextToken, Cursor& curLoction)
     curLoction = begin;
     // 标识符&保留字
     if (isLetter(buffer[begin])){
-        while (isDigit(buffer[end]) || isLetter(buffer[end])){
+        while (isDigit(buffer[end]) || isLetter(buffer[end]))
             forward(1, 1);
-        }
         string id("");
         while (begin != end){
             id.append(1, buffer[begin]);
@@ -150,12 +154,12 @@ int Reader::getToken(Token& nextToken, Cursor& curLoction)
         }
     }
     else if (buffer[begin] == '*') {
-        if (buffer[end] == '='){
+        if (buffer[end] == '=') {
             forward(0, 2);
             forward(1, 2);
             nextToken = Token(Operator, "Multiply Assign");
         }
-        else{
+        else {
             forward(0, 1);
             forward(1, 1);
             nextToken = Token(Operator, "Star");
@@ -275,6 +279,11 @@ int Reader::getToken(Token& nextToken, Cursor& curLoction)
         }
         
     }
+    else if (buffer[begin] == '?') {
+        forward(0, 1);
+        forward(1, 1);
+        nextToken = Token(Operator, "Question Mark");
+    }
     else if (buffer[begin] == '>') {
         if (buffer[end] == '>') {
             forward(0, 1);
@@ -310,6 +319,8 @@ int Reader::getToken(Token& nextToken, Cursor& curLoction)
         forward(0, 1);
         string constStr("");
         while (begin != end){
+            if (buffer[begin] == '\\' && buffer[begin.loc + 1] == '\n')
+                forward(0, 2);
             constStr.append(1, buffer[begin]);
             forward(0, 1);
         }
@@ -334,151 +345,14 @@ int Reader::getToken(Token& nextToken, Cursor& curLoction)
         else
             nextToken = Token(ConstChar, constStr);
     }
-    // 处理数字
-    else if (isDigit(buffer[begin])) {
-        bool isFloat, isInt, isError = false;
-        // 处理2进制，8进制，16进制整数
-        if (buffer[begin] == '0' && buffer[end] != '.') {
-            isInt = true;
-            if (buffer[end] == 'b' || buffer[end] == 'B') {
-                forward(1, 1);
-                while (buffer[end] == '0' || buffer[end] == '1')
-                    forward(1, 1);
-                if (('2' <= buffer[end] && '9' >= buffer[end]) ||
-                    ('a' <= buffer[end] && 'f' >= buffer[end]) ||
-                    ('A' <= buffer[end] && 'F' >= buffer[end]))
-                    isError = true;
-            }
-            else if (buffer[end]  == 'x' || buffer[end] == 'X') {
-                 forward(1, 1);
-                while ((buffer[end] >= '0' && buffer[end] <= '9') ||
-                    (buffer[end] >= 'a' && buffer[end] <= 'f') ||
-                    (buffer[end] >= 'A' && buffer[end] <= 'F'))
-                    forward(1, 1);
-            }
-            else if (isDigit(buffer[end])) {
-                forward(1, 1);
-                while (buffer[end] >= '0' && buffer[end] <= '7')
-                    forward(1, 1);
-                if (('8' <= buffer[end] && '9' >= buffer[end]) ||
-                ('a' <= buffer[end] && 'f' >= buffer[end]) ||
-                ('A' <= buffer[end] && 'F' >= buffer[end]))
-                    isError = true;
-            }  // 先跳过数字部分
-
-            // 判断尾缀
-            if (buffer[end] == 'u' || buffer[end] == 'U') {
-                forward(1, 1);
-                if (buffer[end] == 'l') {
-                    forward(1, 1);
-                    if (buffer[end] == 'l')
-                        forward(1, 1);
-                }
-                else if (buffer[end] == 'L') {
-                    forward(1, 1);
-                    if (buffer[end] == 'L')
-                        forward(1, 1);
-                }
-            }
-            else if (buffer[end] == 'l') {
-                forward(1, 1);
-                if (buffer[end] == 'l')
-                    forward(1, 1);
-            }
-            else if (buffer[end] == 'L') {
-                forward(1, 1);
-                if (buffer[end] == 'L')
-                    forward(1, 1);
-            }
-            else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                isError = true;
-        }
-
-        while (isDigit(buffer[end]))
-            forward(1, 1);
-        if (buffer[end] == '.') {
-            isFloat = true;
-            forward(1, 1);
-            while (isDigit(buffer[end]))
-                forward(1, 1);
-            if (buffer[end] == 'e' || buffer[end] == 'E') {
-                forward(1, 1);
-                if (buffer[end] == '-')
-                    forward(1, 1);
-                while (isDigit(buffer[end]))
-                    forward(1, 1);
-            }
-            if (buffer[end] == 'l'||buffer[end] == 'L' ||
-                buffer[end] == 'f'||buffer[end] == 'F')
-                forward(1, 1);
-            else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                isError = true;
-        }
-        else if (buffer[end] == 'e' || buffer[end] == 'E') {
-            isFloat = true;
-            forward(1, 1);
-            if (buffer[end] == '-')
-                forward(1, 1);
-            while (isDigit(buffer[end]))
-                forward(1, 1);
-            if (buffer[end] == 'l'||buffer[end] == 'L' ||
-                buffer[end] == 'f'||buffer[end] == 'F')
-                forward(1, 1);
-            else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                isError = true;
-        }
-        else if (buffer[end] == 'u' || buffer[end] == 'U') {
-            forward(1, 1);
-            if (buffer[end] == 'l') {
-                forward(1, 1);
-                if (buffer[end] == 'l')
-                    forward(1, 1);
-                else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                    isError = true;
-            }
-            else if (buffer[end] == 'L') {
-                forward(1, 1);
-                if (buffer[end] == 'L')
-                    forward(1, 1);
-                else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                    isError = true;
-            }
-            else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                isError = true;
-        }
-        else if (buffer[end] == 'l') {
-            forward(1, 1);
-            if (buffer[end] == 'l')
-                forward(1, 1);
-            else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                isError = true;
-        }
-        else if (buffer[end] == 'L') {
-            forward(1, 1);
-            if (buffer[end] == 'L')
-                forward(1, 1);
-            else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-                isError = true;
-        }
-        else if ((buffer[end] == 'f' || buffer[end] == 'F') && !isInt){
-            isFloat = true;
-            forward(1, 1);
-        }
-        else if (isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
-            isError = true;
-        if (!isError) {
-            string num("");
-            while (begin != end){
-                num.append(1, buffer[begin]);
-                forward(0, 1);
-            }
-            nextToken = isFloat ? Token(ConstFloat, num): Token(ConstInt, num);
-        }
-        else
-            nextToken = digitsError();
-    }
+    else if (buffer[begin] == '.' && !isDigit(buffer[end])) {
+        forward(0, 1);
+        forward(1, 1);
+        nextToken = Token(Seperator, "dot");
+    } 
+    else if (isDigit(buffer[begin])  || buffer[begin] == '.')
+        nextToken = getNumber();
     skipBlankComment();
-
     return buffer[begin] == EOF ? 0: 1;
 }
 
@@ -517,18 +391,44 @@ void Reader::skipBlankComment()
     }
 }
 
-Token Reader::digitsError()
+Token Reader::getNumber()
 {
-    string ret("");
-    while (isDigit(buffer[end]) || isLetter(buffer[end]) || '_' == buffer[end] || '.' == buffer[end])
+    string num("");
+    int retFlag = 0;
+    while (isDigit(buffer[end]) || isLetter(buffer[end]) || buffer[end] == '.' || buffer[end] == '-' || buffer[end] == '+')
         forward(1, 1);
-    while (begin.loc != end.loc) {
-        ret.append(1, buffer[begin]);
+    while (begin != end){
+        num.append(1, buffer[begin]);
         forward(0, 1);
     }
     forward(1, 1);
+    // u, l, ul, lu, ll, ull, llu
+    if (regex_match(num, regex(OCT_REGEX)))
+        retFlag = 1;
+    else if (regex_match(num, regex(HEX_FLOAT_REGEX)))
+        retFlag = 2;
+    else if (regex_match(num, regex(HEX_INT_REGEX)))
+        retFlag = 1;
+    else if (regex_match(num, regex(DEC_INT_REGEX)))
+        retFlag = 1;
+    else if (regex_match(num, regex(DEC_FLOAT_REGEX)))
+        retFlag = 2;
+    else if (regex_match(num, regex(BIN_REGEX)))
+        retFlag = 1;
 
-    return Token(Error, string("Invalid number \'").append(ret).append("\'"));
+    switch (retFlag)
+    {
+    case 1:
+        return Token(ConstInt, num);
+        break;
+    case 2:
+        return Token(ConstFloat, num);
+        break;
+    default:
+        return Token(Error, string("Invalid number: ").append(num));
+        break;
+    }
+    
 }
 
 char Reader::forward(int check, unsigned int step)

@@ -3,7 +3,7 @@
 namespace LexicalAnalysis
 {
 
-const char * tokenTypeStr[9] = {
+const char * tokenTypeStr[] = {
     "Identifier",
     "Int",
     "Float",
@@ -21,11 +21,8 @@ Token::Token()
     _attr = '-';
 }
 
-Token::Token(TokenType type, string attr)
-{
-    _type = type;
-    _attr = attr;
-}
+Token::Token(TokenType type, string attr):
+_type(type), _attr(attr){}
 
 TokenType Token::type()
 {

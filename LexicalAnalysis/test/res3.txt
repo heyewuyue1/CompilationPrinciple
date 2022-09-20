@@ -1,0 +1,72 @@
+<KeyWord, int>:1:1
+<Identifier, a>:1:5
+<Operator, Left Bracket>:1:6
+<Operator, Right Bracket>:1:7
+<Operator, Assignment>:1:9
+<Seperator, Left Brace>:1:11
+<Error, Invalid number: 013853>:1:12
+<Seperator, Comma>:1:18
+<Error, Invalid number: 123333F>:1:20
+<Seperator, Comma>:1:27
+<Error, Invalid number: 23LU23>:1:29
+<Seperator, Comma>:1:35
+<Error, Invalid number: 0XFFEUU>:1:37
+<Seperator, Comma>:1:44
+<Error, Invalid number: 0xU>:1:46
+<Seperator, Comma>:1:49
+<Error, Invalid number: 0EU>:1:51
+<Seperator, Comma>:1:54
+<Error, Invalid number: 0x12bufb>:1:56
+<Seperator, Comma>:1:64
+<Error, Invalid number: 12_>:1:66
+<Seperator, Right Brace>:1:69
+<Seperator, Semicolon>:1:70
+<KeyWord, double>:2:1
+<Identifier, b>:2:8
+<Operator, Left Bracket>:2:9
+<Operator, Right Bracket>:2:10
+<Operator, Assignment>:2:12
+<Seperator, Left Brace>:2:14
+<Float, 02582e2>:2:15
+<Seperator, Comma>:2:22
+<Float, 0xb.1ep5>:2:23
+<Seperator, Comma>:2:31
+<Float, 00.3e-4l>:2:33
+<Seperator, Comma>:2:41
+<Float, 0X5e5ep2>:2:43
+<Seperator, Comma>:2:51
+<Error, Invalid number: 0xp0>:2:53
+<Seperator, Comma>:2:57
+<Error, Invalid number: 0xfpl>:2:59
+<Seperator, Comma>:2:64
+<Error, Invalid number: 0x5e.2>:2:66
+<Seperator, Comma>:2:72
+<Error, Invalid number: 2.2.2>:2:74
+<Seperator, Comma>:2:79
+<Error, Invalid number: 3e5.4>:2:81
+<Seperator, Comma>:2:86
+<Error, Invalid number: 0x4h3e-l>:2:88
+<Seperator, Comma>:2:96
+<Seperator, dot>:2:98
+<Identifier, e4>:2:99
+<Seperator, Comma>:2:101
+<Error, Invalid number: 0x.p5L>:2:103
+<Seperator, Right Brace>:2:109
+<Seperator, Semicolon>:2:110
+<KeyWord, char>:3:1
+<Identifier, c>:3:6
+<Operator, Assignment>:3:8
+<Error, multi-character character constant>:3:10
+[Statistics]
+Total characters: 228
+Total lines: 5
+Total tokens: 59
+Identifier: 4
+Int: 0
+Float: 4
+Char: 0
+String: 0
+KeyWord: 3
+Operator: 7
+Seperator: 25
+Error: 16

@@ -1,13 +1,7 @@
-ont main()
+int main()
 {
-    int a0+j = sizeof(a);
-    float b = 0x1uLf, c = 5.8;
-    // a >>[]= b;  +// this is a comment
-    //
-    //
-    /* **
-    return 0;
-    */
-    a = "cdddd";
+    int a = 10;
+    int b = 10;
+    a = a + b;
     return 0;
 }

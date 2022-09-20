@@ -1,0 +1,407 @@
+<KeyWord, typedef>:1:1
+<KeyWord, struct>:1:9
+<Identifier, Node>:1:16
+<Seperator, Left Brace>:2:1
+<KeyWord, int>:3:5
+<Identifier, a>:3:9
+<Seperator, Comma>:3:10
+<Identifier, b>:3:12
+<Seperator, Semicolon>:3:13
+<KeyWord, long>:4:5
+<KeyWord, long>:4:10
+<Identifier, c>:4:15
+<Seperator, Semicolon>:4:16
+<KeyWord, union>:5:5
+<Seperator, Left Brace>:6:5
+<KeyWord, float>:7:9
+<Identifier, d>:7:15
+<Seperator, Semicolon>:7:16
+<KeyWord, double>:8:9
+<Identifier, e>:8:16
+<Seperator, Semicolon>:8:17
+<Seperator, Right Brace>:9:5
+<Seperator, Semicolon>:9:6
+<Identifier, LL>:10:5
+<Identifier, f>:10:8
+<Seperator, Semicolon>:10:9
+<Seperator, Right Brace>:11:1
+<Identifier, Node>:11:3
+<Seperator, Semicolon>:11:7
+<KeyWord, char>:13:1
+<Identifier, ch>:13:6
+<Operator, Left Bracket>:13:8
+<Int, 10>:13:9
+<Operator, Right Bracket>:13:11
+<Seperator, Semicolon>:13:12
+<KeyWord, enum>:14:1
+<Identifier, TT>:14:6
+<Seperator, Left Brace>:15:1
+<Identifier, namea>:16:5
+<Seperator, Comma>:16:10
+<Identifier, nameb>:17:5
+<Seperator, Comma>:17:10
+<Seperator, Right Brace>:18:1
+<Seperator, Semicolon>:18:2
+<KeyWord, extern>:19:1
+<Identifier, eee>:19:8
+<Seperator, Semicolon>:19:11
+<KeyWord, static>:21:1
+<KeyWord, int>:21:8
+<Identifier, func>:21:12
+<Seperator, Left Parenthesis>:21:16
+<KeyWord, unsigned>:21:17
+<KeyWord, long>:21:26
+<KeyWord, long>:21:31
+<Identifier, var>:21:36
+<Seperator, Right Parenthesis>:21:39
+<Seperator, Left Brace>:22:1
+<Identifier, var>:23:5
+<Operator, Plus Assign>:23:9
+<Identifier, var>:23:12
+<Operator, Star>:23:16
+<Seperator, Left Parenthesis>:23:18
+<Identifier, var>:23:19
+<Operator, Minus>:23:23
+<Identifier, var>:23:25
+<Seperator, Right Parenthesis>:23:28
+<Operator, Plus>:23:30
+<Seperator, Left Parenthesis>:23:32
+<Seperator, Left Parenthesis>:23:33
+<Identifier, var>:23:34
+<Operator, Division>:23:38
+<Identifier, var>:23:40
+<Seperator, Right Parenthesis>:23:43
+<Operator, Mod>:23:45
+<Identifier, var>:23:47
+<Seperator, Right Parenthesis>:23:50
+<Seperator, Semicolon>:23:51
+<KeyWord, unsigned>:24:5
+<Identifier, LL>:24:14
+<Operator, Star>:24:17
+<Identifier, restrict>:24:18
+<Identifier, p>:24:27
+<Operator, Assignment>:24:29
+<Operator, Digit And>:24:31
+<Identifier, var>:24:32
+<Seperator, Semicolon>:24:35
+<KeyWord, return>:25:5
+<Identifier, var>:25:12
+<Seperator, Semicolon>:25:15
+<Seperator, Right Brace>:26:1
+<Identifier, inline>:28:1
+<KeyWord, int>:28:8
+<Identifier, f>:28:12
+<Seperator, Left Parenthesis>:28:13
+<Seperator, Right Parenthesis>:28:14
+<Seperator, Left Brace>:29:1
+<KeyWord, return>:30:5
+<Operator, Size of>:30:12
+<Seperator, Left Parenthesis>:30:18
+<Identifier, LL>:30:19
+<Seperator, Right Parenthesis>:30:21
+<Seperator, Semicolon>:30:22
+<Seperator, Right Brace>:31:1
+<KeyWord, int>:33:1
+<Identifier, main>:33:5
+<Seperator, Left Parenthesis>:33:9
+<KeyWord, int>:33:10
+<Identifier, argc>:33:14
+<Seperator, Comma>:33:18
+<KeyWord, char>:33:20
+<Operator, Star>:33:25
+<Identifier, argv>:33:26
+<Operator, Left Bracket>:33:30
+<Operator, Right Bracket>:33:31
+<Seperator, Right Parenthesis>:33:32
+<Seperator, Left Brace>:34:1
+<Identifier, Node>:35:5
+<Identifier, node>:35:10
+<Seperator, Semicolon>:35:14
+<Identifier, Node>:36:5
+<Operator, Star>:36:10
+<Identifier, pnode>:36:11
+<Operator, Assignment>:36:17
+<Operator, Digit And>:36:19
+<Identifier, node>:36:20
+<Seperator, Semicolon>:36:24
+<Identifier, node>:37:5
+<Seperator, dot>:37:9
+<Identifier, a>:37:10
+<Operator, Assignment>:37:12
+<Identifier, pnode>:37:14
+<Operator, Struct Pointer Attribute>:37:19
+<Identifier, a>:37:21
+<Seperator, Semicolon>:37:22
+<Identifier, node>:38:5
+<Seperator, dot>:38:9
+<Identifier, b>:38:10
+<Operator, Increase>:38:11
+<Seperator, Semicolon>:38:13
+<KeyWord, auto>:39:5
+<KeyWord, unsigned>:39:10
+<KeyWord, int>:39:19
+<Identifier, x>:39:23
+<Operator, Assignment>:39:25
+<Identifier, node>:39:27
+<Seperator, dot>:39:31
+<Identifier, b>:39:32
+<Operator, Digit And>:39:34
+<Seperator, Left Parenthesis>:39:36
+<Seperator, Left Parenthesis>:39:37
+<Identifier, pnode>:39:38
+<Operator, Struct Pointer Attribute>:39:43
+<Identifier, c>:39:45
+<Operator, Digit Or>:39:47
+<Identifier, ch>:39:49
+<Operator, Left Bracket>:39:51
+<Int, 0>:39:52
+<Operator, Right Bracket>:39:53
+<Seperator, Right Parenthesis>:39:54
+<Operator, Digit Xor>:39:56
+<Identifier, node>:39:58
+<Seperator, dot>:39:62
+<Identifier, a>:39:63
+<Operator, Decrease>:39:64
+<Seperator, Right Parenthesis>:39:66
+<Seperator, Semicolon>:39:67
+<KeyWord, volatile>:40:5
+<KeyWord, unsigned>:40:14
+<KeyWord, char>:40:23
+<Identifier, m>:40:28
+<Operator, Assignment>:40:30
+<Identifier, x>:40:32
+<Operator, Left Shift>:40:34
+<Int, 5>:40:37
+<Operator, Plus>:40:39
+<Char, c>:40:41
+<Seperator, Semicolon>:40:44
+<KeyWord, const>:41:5
+<KeyWord, float>:41:11
+<Identifier, y>:41:17
+<Operator, Assignment>:41:19
+<Float, 3.14>:41:21
+<Seperator, Comma>:41:25
+<Identifier, z>:41:27
+<Operator, Assignment>:41:29
+<Float, 3e5>:41:31
+<Seperator, Semicolon>:41:34
+<Identifier, _Bool>:42:5
+<Identifier, t>:42:11
+<Operator, Assignment>:42:13
+<Identifier, x>:42:15
+<Operator, Less>:42:17
+<Identifier, z>:42:19
+<Operator, Logic And>:42:21
+<Identifier, y>:42:24
+<Operator, Greater>:42:26
+<Identifier, z>:42:28
+<Operator, Logic Or>:42:30
+<Identifier, x>:42:33
+<Operator, Less Equal>:42:35
+<Identifier, y>:42:38
+<Operator, Logic And>:42:40
+<Identifier, y>:42:43
+<Operator, Greater Equal>:42:45
+<Identifier, z>:42:48
+<Seperator, Semicolon>:42:49
+<Identifier, node>:43:5
+<Seperator, dot>:43:9
+<Identifier, a>:43:10
+<Operator, Assignment>:43:12
+<Identifier, m>:43:14
+<Operator, Increase>:43:15
+<Operator, Plus>:43:18
+<Identifier, x>:43:20
+<Seperator, Semicolon>:43:21
+<Identifier, _Complex>:44:5
+<Identifier, n>:44:14
+<Seperator, Semicolon>:44:15
+<KeyWord, goto>:45:5
+<Identifier, label>:45:10
+<Seperator, Semicolon>:45:15
+<KeyWord, char>:46:5
+<Operator, Star>:46:10
+<Identifier, str>:46:11
+<Operator, Assignment>:46:15
+<String, str/*comment*/>:46:17
+<Seperator, Semicolon>:46:33
+<Identifier, label>:47:1
+<Seperator, Colon>:47:6
+<KeyWord, if>:48:5
+<Seperator, Left Parenthesis>:48:8
+<Identifier, y>:48:9
+<Operator, Not Equal>:48:11
+<Identifier, z>:48:14
+<Seperator, Right Parenthesis>:48:15
+<Identifier, x>:49:9
+<Operator, Left Shift Assign>:49:11
+<Int, 2>:49:15
+<Operator, Digit Xor>:49:17
+<Int, 3>:49:19
+<Seperator, Semicolon>:49:20
+<KeyWord, else>:50:5
+<KeyWord, if>:50:10
+<Seperator, Left Parenthesis>:50:13
+<Operator, Logic Not>:50:14
+<Seperator, Left Parenthesis>:50:15
+<Identifier, x>:50:16
+<Operator, Right Shift>:50:18
+<Int, 2>:50:21
+<Seperator, Right Parenthesis>:50:22
+<Seperator, Right Parenthesis>:50:23
+<Identifier, x>:51:9
+<Operator, Right Shift Assign>:51:11
+<Int, 2>:51:15
+<Seperator, Semicolon>:51:16
+<KeyWord, else>:52:5
+<Identifier, x>:53:9
+<Operator, And Assign>:53:11
+<Int, 5>:53:14
+<Seperator, Semicolon>:53:15
+<Identifier, m>:54:5
+<Operator, Xor Assign>:54:7
+<Seperator, Left Parenthesis>:54:10
+<Identifier, x>:54:11
+<Operator, Or Assign>:54:13
+<Operator, Digit Not>:54:16
+<Identifier, node>:54:17
+<Seperator, dot>:54:21
+<Identifier, b>:54:22
+<Seperator, Right Parenthesis>:54:23
+<Seperator, Semicolon>:54:24
+<Identifier, x>:55:5
+<Operator, Minus Assign>:55:7
+<Seperator, Left Parenthesis>:55:10
+<Identifier, node>:55:11
+<Seperator, dot>:55:15
+<Identifier, a>:55:16
+<Operator, Multiply Assign>:55:18
+<Seperator, Left Parenthesis>:55:21
+<Identifier, m>:55:22
+<Operator, Division Assign>:55:24
+<Seperator, Left Parenthesis>:55:27
+<Identifier, node>:55:28
+<Seperator, dot>:55:32
+<Identifier, b>:55:33
+<Operator, Mod Assign>:55:35
+<Int, 2u>:55:38
+<Seperator, Right Parenthesis>:55:40
+<Seperator, Right Parenthesis>:55:41
+<Seperator, Right Parenthesis>:55:42
+<Seperator, Semicolon>:55:43
+<KeyWord, while>:56:5
+<Seperator, Left Parenthesis>:56:11
+<Int, 1>:56:12
+<Seperator, Right Parenthesis>:56:13
+<Seperator, Left Brace>:57:5
+<KeyWord, if>:59:9
+<Seperator, Left Parenthesis>:59:12
+<Int, 5u>:59:13
+<Seperator, Right Parenthesis>:59:15
+<KeyWord, break>:60:13
+<Seperator, Semicolon>:60:18
+<KeyWord, if>:61:9
+<Seperator, Left Parenthesis>:61:12
+<Identifier, y>:61:13
+<Operator, Less Equal>:61:15
+<Identifier, z>:61:18
+<Seperator, Right Parenthesis>:61:19
+<KeyWord, continue>:62:13
+<Seperator, Semicolon>:62:21
+<Seperator, Right Brace>:63:5
+<KeyWord, do>:64:5
+<Seperator, Left Brace>:65:5
+<KeyWord, signed>:66:9
+<Identifier, _temp>:66:16
+<Operator, Assignment>:66:22
+<Int, 0x0123456789abcdefUL>:66:24
+<Seperator, Comma>:66:44
+<Identifier, temp_temp>:66:46
+<Operator, Assignment>:66:56
+<Int, 00123251>:66:58
+<Seperator, Semicolon>:66:66
+<KeyWord, float>:67:9
+<Identifier, __>:67:15
+<Operator, Assignment>:67:18
+<Float, 0x12f.2p+4>:67:20
+<Seperator, Semicolon>:67:30
+<KeyWord, switch>:68:9
+<Seperator, Left Parenthesis>:68:16
+<Identifier, _temp>:68:17
+<Seperator, Right Parenthesis>:68:22
+<Seperator, Left Brace>:69:9
+<KeyWord, case>:70:9
+<Char, d>:70:14
+<Seperator, Colon>:70:17
+<KeyWord, break>:77:13
+<Seperator, Semicolon>:77:18
+<KeyWord, default>:79:9
+<Seperator, Colon>:79:16
+<KeyWord, break>:80:13
+<Seperator, Semicolon>:80:18
+<Seperator, Right Brace>:81:9
+<Seperator, Right Brace>:82:5
+<KeyWord, while>:82:7
+<Seperator, Left Parenthesis>:82:13
+<Int, 0>:82:14
+<Seperator, Right Parenthesis>:82:15
+<Seperator, Semicolon>:82:16
+<KeyWord, for>:84:5
+<Seperator, Left Parenthesis>:84:9
+<KeyWord, register>:84:10
+<KeyWord, int>:84:19
+<Identifier, i>:84:23
+<Operator, Assignment>:84:25
+<Int, 1>:84:27
+<Seperator, Semicolon>:84:28
+<Identifier, i>:84:30
+<Operator, Less Equal>:84:32
+<Operator, Minus>:84:35
+<Int, 1>:84:36
+<Seperator, Semicolon>:84:37
+<Operator, Increase>:84:39
+<Identifier, i>:84:41
+<Seperator, Right Parenthesis>:84:42
+<Seperator, Semicolon>:85:9
+<Identifier, printf>:87:5
+<Seperator, Left Parenthesis>:87:11
+<String, %llu\n>:87:12
+<Seperator, Comma>:87:20
+<Int, 3ul>:87:22
+<Operator, Question Mark>:87:26
+<Int, 2llu>:87:28
+<Seperator, Colon>:87:33
+<Int, 45ull>:87:35
+<Seperator, Right Parenthesis>:87:40
+<Seperator, Semicolon>:87:41
+<Identifier, printf>:88:5
+<Seperator, Left Parenthesis>:88:11
+<String, floats %f %lf\n>:88:12
+<Seperator, Comma>:89:10
+<Float, 1.e-2f>:90:12
+<Seperator, Comma>:90:18
+<Seperator, Left Parenthesis>:90:20
+<KeyWord, double>:90:21
+<Seperator, Right Parenthesis>:90:27
+<Float, .356e+3l>:90:28
+<Seperator, Right Parenthesis>:90:36
+<Seperator, Semicolon>:90:37
+<KeyWord, return>:91:5
+<Identifier, x>:91:12
+<Seperator, Comma>:91:13
+<Int, 0>:91:15
+<Seperator, Semicolon>:91:16
+<Seperator, Right Brace>:92:1
+[Statistics]
+Total characters: 1663
+Total lines: 92
+Total tokens: 394
+Identifier: 104
+Int: 20
+Float: 5
+Char: 2
+String: 3
+KeyWord: 56
+Operator: 70
+Seperator: 134
+Error: 0

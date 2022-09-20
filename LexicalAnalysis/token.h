@@ -21,6 +21,7 @@ enum TokenType{
     Error
 };
 
+extern const char * tokenTypeStr[];
 
 class Token
 {

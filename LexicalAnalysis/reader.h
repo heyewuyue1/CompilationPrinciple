@@ -3,6 +3,7 @@
 #define READER_H
 
 #include <fstream>
+#include <regex>
 #include "token.h"
 #include "buffer.h"
 #include "cursor.h"
@@ -21,7 +22,7 @@ public:
 private:
     char forward(int check, unsigned int step);
     void skipBlankComment();
-    Token digitsError();
+    Token getNumber();
     Cursor begin, end;
     Buffer buffer;
     unsigned int _bufferSize;

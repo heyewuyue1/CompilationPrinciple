@@ -28,6 +28,4 @@ Cursor::operator unsigned int()
 {
     return loc;
 }
-
-
 }
