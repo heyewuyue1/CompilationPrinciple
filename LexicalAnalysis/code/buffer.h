@@ -8,7 +8,7 @@ public:
     Buffer(const char *, unsigned int);
     unsigned int fillLeftBuffer();
     unsigned int fillRightBuffer();
-    char operator[](int loc);
+    char operator[](int);
     ~Buffer();
 private:
     std::ifstream sourceFile;

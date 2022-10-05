@@ -1,0 +1,60 @@
+<KeyWord, int>:1:1
+<Identifier, main>:1:5
+<Seperator, (>:1:9
+<Seperator, )>:1:10
+<Seperator, {>:2:1
+<KeyWord, int>:3:5
+<Identifier, a>:3:9
+<Seperator, ,>:3:10
+<Identifier, b>:3:12
+<Operator, =>:3:14
+<Int, 2>:3:16
+<Seperator, ;>:3:17
+<Identifier, a>:4:5
+<Operator, =>:4:7
+<Operator, ->:4:9
+<Float, 1e4F>:4:10
+<Seperator, ;>:4:14
+<Identifier, b>:5:5
+<Operator, =>:5:6
+<Float, 0.11F>:5:8
+<Operator, +>:5:14
+<Identifier, a>:5:16
+<Seperator, ;>:5:17
+<KeyWord, float>:6:5
+<Identifier, data>:6:11
+<Seperator, ;>:6:15
+<Identifier, data>:7:5
+<Operator, =>:7:10
+<Seperator, (>:7:12
+<Identifier, a>:7:13
+<Operator, +>:7:15
+<Identifier, b>:7:17
+<Seperator, )>:7:18
+<Operator, *>:7:20
+<Float, 1.2>:7:22
+<Seperator, ;>:7:25
+<Identifier, printf>:8:5
+<Seperator, (>:8:11
+<String, "data = %f\n">:8:12
+<Seperator, ,>:8:25
+<Identifier, data>:8:27
+<Seperator, )>:8:31
+<Seperator, ;>:8:32
+<KeyWord, return>:9:5
+<Int, 0>:9:12
+<Seperator, ;>:9:13
+<Seperator, }>:10:1
+[Statistics]
+Total characters: 154
+Total lines: 10
+Total tokens: 47
+Identifier: 12
+Int: 2
+Float: 3
+Char: 0
+String: 1
+KeyWord: 4
+Operator: 8
+Seperator: 17
+Error: 0

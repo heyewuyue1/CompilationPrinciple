@@ -1,35 +1,21 @@
-\documentclass[a4paper,12pt]{report}
-\usepackage[margin=1in]{geometry} % to change the page dimensions
-\usepackage{ctex}
+\documentclass[twocolumn]{article}
+\usepackage[a4paper,top=1.0cm, left=1.4cm,right=1.4cm]{geometry}
 \usepackage{xeCJK}
-\usepackage{comment}
-%\usepackage{times}
 \usepackage{setspace}
-% \usepackage{lastpage}
-\usepackage{fancyhdr}
-\usepackage{graphicx}
-%\graphicspath{{fig/}}
-\usepackage{wrapfig}
-\usepackage{subfigure}
-\usepackage{array}  
-% \usepackage{fontspec,xunicode,xltxtra}
-% \renewcommand{\sfdefault}{cmr}
-\usepackage{titlesec}
-\usepackage{titletoc}
-\usepackage[titletoc]{appendix}
-%\usepackage[top=30mm,bottom=30mm,left=20mm,right=20mm]{geometry}
-%\usepackage{cite}
-\usepackage[backend = biber, style = gb7714-2015, defernumbers=true]{biblatex}
-%\renewcommand*{\bibfont}{\small}
-%\addbibresource{reference.bib}
-\setmonofont{Courier New}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\linespread{1.5}
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{threeparttable}
 \lstset{tabsize=4, keepspaces=true,
     xleftmargin=2em,xrightmargin=0em, aboveskip=1em,
-%    backgroundcolor=\color{FloralWhite},  % 定义背景颜色
     frame=single,                       % 表示不要边框
-    extendedchars=false,              % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
+    extendedchars=false,        % 解决代码跨页时，章节标题，页眉等汉字不显示的问题
     numberstyle=\ttfamily,
     basicstyle=\ttfamily,
     keywordstyle=\color{blue}\bfseries,
@@ -45,316 +31,495 @@
     escapeinside={/*@}{@*/},
 }
 \usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{stfloats}
 \usepackage{tikz}
 \usetikzlibrary{arrows,shapes,chains}
-\usepackage{amsthm}
-\newtheorem{theorem}{定理}
-\newtheorem{definition}{定义}
-\newtheorem{corollary}{推论}
-\newtheorem{example}{例}
-\usepackage{amsfonts}
-%\usepackage{bm}
-\usepackage{booktabs} % for much better looking tables
-\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
-\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
-\usepackage{subfigure} % make it possible to include more than one captioned figure/table in a single float
-% These packages are all incorporated in the memoir class to one degree or another...
-\usepackage{cases} %equation set
-\usepackage{multirow} %use table
-\usepackage{algorithm}
-\usepackage{algorithmic}
-\usepackage{hyperref}
-\hypersetup{colorlinks,linkcolor=black,anchorcolor=black,citecolor=black, pdfstartview=FitH,bookmarksnumbered=true,bookmarksopen=true,} % set href in tex & pdf
-%\usepackage[framed,numbered,autolinebreaks,useliterate]{mcode} % 插入matlab代码
-\XeTeXlinebreaklocale "zh"
-\XeTeXlinebreakskip = 0pt plus 1pt minus 0.1pt
-
-%---------------------------------------------------------------------
-%	页眉页脚设置
-%---------------------------------------------------------------------
-\fancypagestyle{plain}{
-    \pagestyle{fancy}      %改变章节首页页眉
-}
-
-\pagestyle{fancy}
-\lhead{\kaishu~何家豪\ 2020211435~}
-\rhead{\kaishu~数据结构：约瑟夫问题\ 设计报告}
-\cfoot{\thepage}
-\titleformat{\chapter}{\centering\zihao{2}\heiti}{第\chinese{chapter}部分}{1em}{}
-% \titleformat{\chapter*}{\centering\zihao{-1}\heiti}
-\begin{comment}
-%---------------------------------------------------------------------
-%	章节标题设置
-%---------------------------------------------------------------------
-\titleformat{\chapter}{\centering\zihao{-1}\heiti}{实验\chinese{chapter}}{1em}{}
-\titlespacing{\chapter}{0pt}{*0}{*6}
-\end{comment}
-%---------------------------------------------------------------------
-%	摘要标题设置
-%---------------------------------------------------------------------
-\renewcommand{\abstractname}{摘要}
-\renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
-
-%---------------------------------------------------------------------
-%	参考文献设置
-%---------------------------------------------------------------------
-%\renewcommand{\bibname}{\zihao{2}{\hspace{\fill}参\hspace{0.5em}考\hspace{0.5em}文\hspace{0.5em}献\hspace{\fill}}}
-\renewcommand{\bibname}{参考文献}
-\begin{comment}
-%---------------------------------------------------------------------
-%	引用文献设置为上标
-%---------------------------------------------------------------------
-\makeatletter
-\def\@cite#1#2{\textsuperscript{[{#1\if@tempswa , #2\fi}]}}
-\makeatother
-\end{comment}
-%---------------------------------------------------------------------
-%	目录页设置
-%---------------------------------------------------------------------
-%\renewcommand{\contentsname}{\zihao{-3} 目\quad 录}
-\renewcommand{\contentsname}{目录}
-\titlecontents{chapter}[0em]{\songti\zihao{-4}}{\thecontentslabel\ }{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
-\titlecontents{section}[2em]{\vspace{0.1\baselineskip}\songti\zihao{-4}}{\thecontentslabel\ }{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
-\titlecontents{subsection}[4em]{\vspace{0.1\baselineskip}\songti\zihao{-4}}{\thecontentslabel\ }{}
-{\hspace{.5em}\titlerule*[4pt]{$\cdot$}\contentspage}
+\renewcommand{\figurename}{图}
+\usepackage{multirow}
+\title{词法分析程序的设计与实现}
+\author{2020211435 何家豪}
 
 \begin{document}
-%---------------------------------------------------------------------
-%	封面设置
-%---------------------------------------------------------------------
-\begin{titlepage}
-    \begin{center}
-        
-    \includegraphics[width=0.60\textwidth]{bupt_logo.png}\\
-    \vspace{10mm}
-    \textbf{\zihao{1}{\heiti{北京邮电大学计算机学院}}}\\[0.8cm]
-    \textbf{\zihao{1}{\heiti{《数据结构》实验设计报告}}}\\[3cm]
-%    \includegraphics[width=0.20\textwidth]{head.jpg}\\%这里是你的照片
-    \vspace{\fill}
-    
-\setlength{\extrarowheight}{3mm}
-{\songti\zihao{3}	
-\begin{tabular}{rl}
-    
-    {\makebox[4\ccwd][s]{学\qquad 号：}} & ~\kaishu 2020211435 \\
-    {\makebox[4\ccwd][s]{姓\qquad 名：}} & ~\kaishu 何家豪 \\
-    {\makebox[4\ccwd][s]{班\qquad 级：}} & ~\kaishu 2020211308\\
-%    {\makebox[4\ccwd][s]{专\qquad 业：}} & ~\kaishu 计算机类 \\
-    {\makebox[4\ccwd][s]{授课教师：}}  & ~\kaishu 张海旸\\ 
-%    {\makebox[4\ccwd][s]{课程助教：}} & ~\kaishu xxx~xxx \\
-    {\makebox[4\ccwd][s]{完成日期：}}  & ~\kaishu 2021年10月19日\\ 
-
-\end{tabular}
- }\\[2cm]
-%\vspace{\fill}
-%\zihao{4}
-%使用\LaTeX 撰写于\today
-    \end{center}	
-\end{titlepage}
-
-%---------------------------------------------------------------------
-%  摘要页
-%---------------------------------------------------------------------
-%\chapter*{摘要}
-%    
-%这里是摘要。
-%
-%\textbf{关键词：}总结，理解，思考
-%
-%\chapter*{Abstract}
-%
-%This is abstract.
-%
-%\textbf{Keywords } summary, comprehension, thinking
-
-%---------------------------------------------------------------------
-%  目录页
-%---------------------------------------------------------------------
-\tableofcontents % 生成目录
-
-%---------------------------------------------------------------------
-%  绪论
-%---------------------------------------------------------------------
-\chapter{设计思路}
-\setcounter{page}{1}
-%\centering
-	\tikzstyle{format}=[rectangle,draw,thin,fill=white]  
-	%定义语句块的颜色,形状和边
-	\tikzstyle{test}=[diamond,aspect=2,draw,thin]  
-	%定义条件块的形状,颜色
-	\tikzstyle{point}=[coordinate,on grid,] 
-	%像素点,用于连接转移线
-	\begin{tikzpicture}[node distance=15mm,auto,>=latex',thin,start chain=going below,every join/.style={norm}] 
-		%start chain=going below指明了流程图的默认方向，node distance=8mm则指明了默认的node距离。这些可以在定义node的时候更改，比如说 
-		%\node[point,right of=n3,node distance=10mm] (p0){};  
-%		%这里声明了node p0，它在node n3 的右边，距离是10mm。
-		\node[format](start){程序开始};
-		\node[format,below of=start] (initList){创建一个空的单链表};
-		\node[format,below of=initList](input){读取输入的n的值和其后的n个人，依次插入链表，并输出录入的所有人的信息};
-		\node[format,below of=input](link){将单链表的尾结点和头节点首尾相接形成循环链表};
-		\node[format, below of=link](inputXMS){读取输入的S，M，X的值};
-		\node[format, below of=inputXMS](find){找到ID为S对应的值的人};
-		\node[format, below of=find](count){从这个人开始，从1开始报数};
-		\node[format, below of=count](kill){数到M，杀死这个人，删除该节点，输出他的个人信息};
-		\node[test, below of=kill, node distance=25mm](checkX){检查剩余人数是否为X};
-		\node[point, left of=checkX, node distance=75mm](point1){};
-		\node[point, left of=count, node distance=75mm](point2){};
-		\node[format, below of=checkX, node distance=30mm](printLast){输出剩余X人的信息};
-		\node[format, below of=printLast](quit){程序退出};
-		
-		
-		
-		\draw[->](start.south) -- (initList);
-		\draw[->](initList.south) -- (input);
-		\draw[->](input.south) -- (link);
-		\draw[->](link.south) -- (inputXMS);
-		\draw[->](inputXMS.south) -- (find);
-		\draw[->](find.south) -- (count);
-		\draw[->](count.south) -- (kill);
-		\draw[->](kill.south) -- (checkX);
-		\draw[->](checkX) -- node{是}(printLast);
-		\draw[-](checkX.west) -- node[above]{否}(point1);
-		\draw[-](point1) -- (point2);
-		\draw[->](point2) -- node{从删除的下个人开始}(count.west);
-		\draw[->](printLast.south) -- (quit);
-	\end{tikzpicture}
-%---------------------------------------------------------------------
-%  极点配置
-%---------------------------------------------------------------------
-\chapter{代码说明}
-
-\section{常量定义}
-\begin{lstlisting}[language=C]
-#define NAME_LENGTH 21  // 人名的最大长度
-#define MAX_PEOPLE 50  // 最大人数
-\end{lstlisting}
-
+\maketitle
+\section{任务描述}
+设计并实现C语言的词法分析程序，要求实现如下功能：
 \begin{itemize}
-    \item NAME\_LENGTH定义了人名的最大长度，考虑到字符串最后的结束符,实际人名最长长度为20。
-    \item MAX\_PEOPLE定义了最多的参与人数：50人。
+	\item 可以识别出用C语言编写的源程序中的每个单词符号，并以记号的形式输出每个单词符号。
+	\item 可以识别并跳过源程序中的注释。
+	\item 可以统计源程序中的语句行数、各类单词的个数、以及字符总数，并输出统计结果。
+	\item 检查源程序中出现的词法错误，并报告错误所在位置。
+	\item 对源程序中出现的错误进行适当的恢复，使词法分析可以继续进行，对源程序进行一次扫描，即可检查并报告源程序中出现的所有词法错误。
 \end{itemize}
+\textbf{实验要求 }分别采用以下两种方案实现：
+\begin{itemize}
+	\item[1.] 采用C/C++作为实现语言，手工编写词法分析程序。
+	\item[2.] 编写LEX源程序，利用LEX编译程序自动生成词法分析程序。
+\end{itemize}
+\section{实验环境}
+\begin{itemize}
+	\item MacBook Pro(13inch, M1, 2020)
+	\item macOS Monterey 12.6
+	\item g++ Apple clang version 14.0.0
+	\item flex 2.6.4 Apple(flex-34)
+\end{itemize}
+\section{手工编写的词法分析程序}
 
-\section{结构体定义}
-\subsection{人结构体}
+\subsection{模块划分与功能介绍}
 
-\begin{lstlisting}[language=C]
-// 定义人结构体
-typedef struct Person
+\subsubsection{模块及模块之间的关系}
+
+\tikzstyle{format}=[rectangle,draw,thin,fill=white]  
+	%定义语句块的颜色,形状和边
+\tikzstyle{test}=[diamond,aspect=2,draw,thin]  
+	%定义条件块的形状,颜色
+\tikzstyle{point}=[coordinate,on grid,] 
+	%像素点,用于连接转移线
+\begin{figure}[tbh]                         
+\caption{模块及模块之间的关系}
+\centering
+\begin{tikzpicture}[node distance=15mm,auto,>=latex',thin,start chain=going below,every join/.style={norm}]
+%		%start chain=going below指明了流程图的默认方向，node distance=8mm则指明了默认的node距离。这些可以在定义node的时候更改，比如说 
+%		%\node[point,right of=n3,node distance=10mm] (p0){};  
+%%		%这里声明了node p0，它在node n3 的右边，距离是10mm。
+	\node[format](main){main};
+	\node[format,below of=main] (lex){Lex};
+	\node[format,below of=lex](reader){Reader};
+	\node[point, below of =reader,distance=10mm](p0){};
+	\node[point, left of =p0, distance=10mm](p1){};
+	\node[point, right of =p0, distance=10mm](p2){};
+	\node[format,below of=p1](token){Token};
+	\node[format,below of=p0] (buffer){Buffer};
+	\node[format,below of=p2](cursor){Cursor};				
+	\draw[->](main.south) -- (lex);
+	\draw[->](lex.south) -- (reader);
+	\draw[-](reader.south) -- (p0);
+	\draw[-](p0) -- (p1);
+	\draw[-](p0) -- (p2);
+	\draw[->](p0) -- (buffer.north);
+	\draw[->](p1) -- (token.north);
+	\draw[->](p2) -- (cursor.north);
+\end{tikzpicture}
+\end{figure}
+
+如图1所示，其中main()模块是程序的入口，负责初始化一个Lex对象，并用它来进行与词法分析相关的工作。Lex模块用来保存分析出的记号和打印输出结果；Reader模块负责从Buffer中读入字符流并把它们转化为记号；Token模块定义了一种数据结构，它表示一个记号；Buffer模块实现了\textit{配对缓冲区} ，将文件内容读入；Cursor模块定义了一种指针类型，负责记录当前读取到的位置信息，统计行数列数等信息。
+
+\subsubsection{Token模块}
+
+\textbf{枚举类型TokenType }在Token模块首先定义了一个枚举类型TokenType，用于描述不同记号的类型，如下所示。
+
+\linespread{1.2}
+\begin{lstlisting}[language=C++]
+enum TokenType
 {
-    int id;        // 编号
-    char name[NAME_LENGTH]; // 姓名
-    int gender;    // 性别
-    int age;       // 年龄
-} Person;
+    Identifier,  // 标志符
+    ConstInt,    // 整数常量
+    ConstFloat,  // 浮点常量
+    ConstChar,   // 字符常量
+    ConstString, // 字符串常量
+    KeyWord,     // 关键字
+    Operator,    // 运算符
+    Seperator,   // 分隔符
+    Error        // 错误标记
+};
 \end{lstlisting}
-在人结构体中，有人的编号，姓名，性别和年龄。
 
-\subsection{链表结点结构体}
-\begin{lstlisting}[language=C]
-// 定义链表结点结构体
-typedef struct LinkedNode
-{
-    struct LinkedNode *next; // 指向下一节点
-    Person *person;          // 当前人
-} Node, *LinkedList;
+\textbf{文字常量数组tokenTypeStr }接下来定义了一个全局变量用于记录记号类型的枚举值与其字面值的对应关系，方便打印输出时使用。
+
+\begin{lstlisting}[language=C++]
+const char * tokenTypeStr[] = {
+    "Identifier",
+    "Int",
+    "Float",
+    "Char",
+    "String",
+    "KeyWord",
+    "Operator",
+    "Seperator",
+    "Error"
+};
 \end{lstlisting}
-在结点的结构体中有指向下一节点的指针域和指向该节点代表的人的结构体指针。这里选择将人的指针作为数据存在结点中，而不是人结构体本身，好处是可以减少在参数传递时的负担。
 
-\section{函数设计及其功能}
-	
-%\begin{definition}[位姿]
-%    位姿是两坐标系间的相互关系，可以等价地用一个位置矢量和一个旋转矩阵来描述：$\left\{ B \right\} = \left\{ {{}_B^AR,{}^A{P_{BORG}}} \right\}$
-%\end{definition}
-\subsection{initList()}
-\begin{lstlisting}[language=C]
-// 创建一个带有头节点的空链表
-int initList(LinkedList *L)
+\textbf{Token类 }Token类中包含两个私有成员变量\_type和\_attr，分别用于代表一个token的类型和属性。Token类的构造函数便是根据输入参数初始化这两个值。Token类还包含了两个值的get和set函数。除此之外，为了方便打印输出，Token类还用友元的方式重载了ostream与Token的左移运算符。
+
+Token类的具体声明如下所示。
+\begin{lstlisting}[language=C++]
+class Token
 {
-    LinkedList newList = (Node *)malloc(sizeof(Node));  // 为头节点分配空间
-    if (!newList)  // 如果空间分配失败
-    {
-        printf("initList: 创建新链表失败。\n");
-        exit(1);
+public:
+    Token(TokenType type, string attr);
+    Token();
+    TokenType type();
+    void setType(TokenType);
+    string attr();
+    void setAttr(string);
+    friend ostream &operator<<(ostream &, const Token &);
+private:
+    TokenType _type;
+    string _attr;
+};
+\end{lstlisting}
+
+\subsubsection{Buffer模块}
+\textbf{Buffer类 }Buffer类定义了一个配对缓冲区。一个Buffer对象包含着一对缓冲区，leftBuffer和rightBuffer。同时提供了两个函数fillLeftBuffer()和fillRightBuffer()用于填充这两个缓冲区。值得注意的是，如果在填充缓冲区时，并没有把缓冲区填满，说明已经读到了输入文件流的尽头，此时两个填充函数会在末尾处补上一个文件结束符（EOF）。
+
+在Buffer的构造函数中，它要求构造者提供一个文件路径来指定要读取的文件，在构造函数中将该文件打开后保存为自身的文件流sourceFile；同时指定一个正整数作为单侧缓冲区的大小（如指定1024字节，则leftBuffer和rightBuffer的大小都为1024字节）。
+
+同时，为了方便访问Buffer内的数据，Buffer类还重载了索引运算符(“[]”)。在索引中的数字是读取的逻辑位置，并不是在当前buffer中的实际位置。所以在读取数据时，会先对这个数字进行取模和整除运算，计算出它对应的实际位置，再去计算得出的那一半buffer中寻找对应位置的值进行返回。
+
+在Buffer类的析构函数中，它会关闭打开的输入文件流并释放两块buffer的空间。
+
+Buffer类的具体声明如下所示。
+
+\begin{lstlisting}[language=C++]
+class Buffer 
+{
+public:
+    Buffer(const char *, unsigned int);
+    unsigned int fillLeftBuffer();
+    unsigned int fillRightBuffer();
+    char operator[](int);
+    ~Buffer();
+private:
+    std::ifstream sourceFile;
+    unsigned int _bufferSize;
+    char *leftBuffer;
+    char *rightBuffer;
+};
+\end{lstlisting}
+
+\subsubsection{Cursor模块}
+\textbf{Cursor类 }Cursor类定义了一个用于记录位置信息的数据结构。其中包括一个位置的逻辑索引loc，行数line，列数row。
+
+如果不加参数的构造Cursor类的对象，将会默认把位置记录在loc=0，line=1，row=1的位置。
+
+Cursor类还定义了一个换行的函数，在每次读到'\textbackslash n'时调用，可以用于处理换行事件。
+
+与Token类类似，Cursor类也以友元的方式重载了ostream与Token的左移运算符方便输出。
+
+最后，为了方便直接将Cursor类的对象作为Buffer的索引使用，Cursor类还定义了一个类型转换函数，它会直接返回loc的值，用于直接当作索引时使用。
+
+Cursor类的具体声明如下所示。
+
+\begin{lstlisting}[language=C++]
+class Cursor
+{
+public:
+    operator unsigned int();
+    Cursor();
+    Cursor(unsigned int, unsigned int, unsigned int);
+    void nextLine();
+    friend ostream& operator<<(ostream&, const Cursor&);
+    unsigned int loc, line, row;
+};
+\end{lstlisting}
+
+\subsubsection{Reader模块}
+Reader模块负责主要的词法分析功能。Reader模块的私有成员中有一个Buffer对象用于输入字符流；有两个Cursor对象，一个是前驱指针begin用于标记当前读取记号的起始位置，一个是后继指针end用于标记当前读取记号的结束位置。
+
+Reader模块的核心函数有两个，forward()和getToken()。
+
+\textbf{forward() } forward()函数的声明如下所示。
+\begin{lstlisting}[language=C++]
+char Reader::forward(int check, unsigned int step);
+\end{lstlisting}
+这个函数的功能是将指针前移。check参数用于指定迁移的是哪一个指针（0为前驱指针，1为后继指针）。之所以要区分的原因是因为：如果迁移的是后继指针，当后继指针前移到缓冲区的边界时，就需要填充另一半缓冲区；而在前移前驱指针时却不用这么做。step参数用于指定本次要前移多少个逻辑位置。除了有可能会检查是否需要填充另一半缓冲区外，forward()函数还会在读到换行符的时候处理指针的换行事件。这个函数的返回值是前移指针之后，指针所指向的字符。
+
+\textbf{getToken() }getToken()函数的声明如下所示。
+\begin{lstlisting}[language=C++]
+int Reader::getToken(Token& nextToken, Cursor& curLoction);
+\end{lstlisting}
+这个函数的功能是从buffer中读取下一个记号出来。参数中的nextToken即为读出来的下一个记号，curLocation为这个记号出现的位置。getToken()函数成功的读取了一个记号（不合法的记号也是记号）时返回1，读取到文件结束时返回0。
+
+在不考虑注释等特殊情况下，其主要的工作逻辑可以分为以下几步：
+\begin{itemize}
+	\item [1. ]读取前驱指针处的字符，根据前驱指针处的字符决定这可能是一个什么样的记号。
+	\item [2. ]依据上一步的判断决定该选择哪个分支去处理这个字符。
+	\item [3. ]进入处理分支后，后继指针不断forward()，直到程序认为从前驱指针到后继指针中间这一段内容可以作为一个记号时停止。
+	\item [4. ]返回这个记号和它的位置，并将前驱指针前移至下一个有效字符的位置，将后继指针前移至前驱指针的下一个位置。
+\end{itemize}
+下面对第1，2步的各种情况做详细说明。
+
+\textbf{处理运算符和分隔符 }
+
+大部分的运算符和分隔符的处理逻辑类似，在此举一复杂例子说明。若前驱指针所在位置的字符为'>'，那么这个位置出现的有可能是一个大于号（">"），有可能出现的是一个大于等于号（">="），有可能出现的是一个右移运算符（'> >'），有可能出现的是一个右移赋值运算符（“> >=”）。在这种情况下函数中会让后驱指针向后扫描至多2个位置来确定这是一个什么样的符号。如下所示。
+\begin{lstlisting}[language=C++]
+else if (buffer[begin] == '>') {
+    if (buffer[end] == '>') {
+        forward(0, 1);
+        forward(1, 1);
+        if (buffer[end] == '=') {
+            forward(0, 2);
+            forward(1, 1);
+            forward(1, 1);
+            nextToken = Token(Operator, "Right Shift Assign");
+        } else {
+            forward(0, 1);
+            forward(1, 1);
+            nextToken = Token(Operator, "Right Shift");
+        }
+    } else if (buffer[end] == '=') {
+        forward(0, 2);
+        forward(1, 2);
+        nextToken = Token(Operator, "Greater Equal");
+    } else {
+        forward(0, 1);
+        forward(1, 1);
+        nextToken = Token(Operator, "Greater");
     }
-    // 将表头的数据域和指针域置空
-    newList->next = NULL;
-    newList->person = NULL;
-    *L = newList;
-    return 0;
 }
 \end{lstlisting}
-该函数的功能是创建一个仅有头节点的空链表。如果在为头结点分配内存时出现错误，将会抛出错误代码1，并退出程序。若创建成功，将会把头结点的指针域和数据域都设置为NULL。头结点将是唯一一个数据域为NULL的结点，这也可以作为后续判断是否为头结点的判断条件。
 
-%\begin{equation}
-%    F=ma
-%\end{equation}
+\textbf{处理标识符和关键字 }
 
-%---------------------------------------------------------------------
-%  分离原则
-%---------------------------------------------------------------------
-\chapter{运行结果}
+当前驱指针指向的是下划线（'\_'）或者一个字母时，函数会将它作为一个标识符或者关键字处理。此时将后继指针不断前移，直到遇到一个不是数字，不是字母，不是下划线的位置停止。然后判断从前驱指针到后继指针中间区域的字符是否构成了32个C语言关键字中的一个，若是，则返回关键字类型；若不是，则返回标识符类型。逻辑比较简单，在此不再赘述代码细节。
 
-\section{运行环境}
-\subsection{硬件信息及系统版本}
-\includegraphics[width=1.00\textwidth]{system_info.png}
-\subsection{GCC编译器版本}
-\begin{lstlisting}
-(base) jasonhe@JasondeMacBook-Pro ~ % gcc --version
-Configured with: --prefix=/Applications/Xcode.app/Contents/Developer/usr --with-gxx-include-dir=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/4.2.1
-Apple clang version 13.0.0 (clang-1300.0.29.3)
-Target: arm64-apple-darwin20.6.0
-Thread model: posix
-InstalledDir: /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin
+\textbf{处理数字 }
+
+处理数字是实现该函数的难点。首先，先要分析一下C语言中各种合法数字的形式。
+\begin{itemize}
+	\item \textbf{十进制整数 }最常见的整数类型，以一个非零的数字开头，后面跟着若干个任意数字。如：54。
+	\item \textbf{十进制浮点数 }在若干个数字中间出现小数点或者科学计数法（e或E）的数字。如：1.1e-4，000.1E+6，00.44。
+	\item \textbf{十六进制整数 }由0x或0X开头，后跟若干个十六进制数字的数。如：0xFF或0Xee
+	\item \textbf{十六进制制浮点数 }由0x开头，中间出现十六进制科学计数法符号p或P的数字。如：0x5e.5e5eP+5
+	\item \textbf{二进制整数 }由0b或0B开头，后面出现若干个01组成的数字。如：0b11，0B001。
+	\item \textbf{八进制整数数 }由0开头，后跟若干个八进制数字的数。如：07，011。
+\end{itemize}
+
+除此之外，整数和浮点数还有若干标注它们类型的后缀。
+
+\textbf{对于整数而言 } 可以使用u或U来表示这个整数是无符号（unsigned）的，用l或L来表示这个整数是长（long）的，用ll或LL来表示这个整数是长长（long long）的。所以下述后缀都是合法的整数后缀：u，l，ul，uL，Ul，UL，lu，lU，Lu，LU，LL，ll，ull，uLL，Ull，ULL，llu，llU，LLu，LLU。
+
+\textbf{对于浮点数而言 } 可以使用f或F来强调这是一个浮点数，用l或L来表示这个浮点数是双精度（double）的。所以下述后缀都是合法的整数后缀：f，F，l，L。
+
+综上，在考虑到前缀，数字内容本身，以及后缀的各种复杂情况下，函数中采用了\textit{正则表达式}的方式来判断前驱指针和后继指针中间的内容是否是一个合法的数字。具体流程为：当前驱指针指向的是一个数字时，函数会将它作为一个数字处理。此时将后继指针不断前移，直到遇到一个不是数字，不是字母，不是下划线，不是小数点，也不是加号或减号的位置停止。然后使用正则表达式判断从前驱指针到后继指针中间区域的字符是否构成了上述6种合法数字中的一种。若是，返回对应的数字类型；若不是，返回错误类型。
+
+\textbf{处理字符和字符串 }
+
+前驱指针指向的是一个单引号（'''）时，函数会将它作为一个字符处理。此时将后继指针不断后移，直到遇到另一个单引号时停止。然后判断两个单引号中间是否只有一个字符，若有且仅有一个字符，返回字符常量类型；若不是这样，返回错误类型。
+
+前驱指针指向的是一个双引号（'"'）时，函数会将它作为一个字符处理。此时将后继指针不断后移，直到遇到另一个双引号时停止。将两个指针中间区域作为一个字符串处理，返回字符串类型。
+
+\subsubsection{Lex模块}
+Lex模块主要负责存储，统计，输出词法分析得到的结果。
+
+\textbf{TableItem结构体 }这个结构体用于描述得到的记号和记号的位置的对应关系。如下所示。
+\begin{lstlisting}[language=C++]
+typedef struct TableItem
+{
+    Token token;
+    Cursor loc;
+} TableItem;
 \end{lstlisting}
-\subsection{编译指令}
-本部分的运行结果均是在以下编译指令编译完成后，运行JosephRing可执行文件完成的。
-\begin{lstlisting}
-(base) jasonhe@JasondeMacBook-Pro ~ % gcc JosephRing.c -o JosephRing
+
+\textbf{Lex类 }Lex类内维护着一个记号表\_tokenTable,用于记录目前已经得到的记号。用tokenNum统计目前各类记号的个数。用lines和charNum统计文件的总行数和字符数。同时Lex类内还维护着一个Reader类的对象用于读记号。
+
+Lex类的构造函数会接收一个文件路径作为参数，代表要进行词法分析的文件。除此之外Lex只有一个analysis()函数用于分析记号和printRes()函数用于输出结果。逻辑上并无特别之处，不做赘述。
+
+Lex类的具体声明如下。
+
+\begin{lstlisting}[language=C++]
+class Lex 
+{
+public:
+    void analysis();
+    Lex(const char *);
+    void printRes();
+private:
+    vector<TableItem> _tokenTable;
+    unsigned int tokenNum[9];
+    Reader _reader;
+    unsigned int lines;
+    unsigned int charNum;
+};
 \end{lstlisting}
-%\cite{wilson2019learning}采用了sim-to-real learning的架构。
 
-%---------------------------------------------------------------------
-%  实验总结
-%---------------------------------------------------------------------
-%\titleformat{\chapter}{\centering\zihao{-1}\heiti}{}{1em}{}
 
-%---------------------------------------------------------------------
-%  参考文献设置
-%---------------------------------------------------------------------
-%\addcontentsline{toc}{chapter}{参考文献}
 
-%\printbibliography
+\subsection{测试程序}
 
-%\titleformat{\chapter}{\centering\zihao{2}\heiti}{附录~\Alph{chapter}}{1em}{}
+\subsubsection{编译程序}
 
-%\begin{appendix}
-%
-%\chapter{第一部分}
-%
-%\begin{lstlisting}[language=python]
-%print('hello world') 
-%\end{lstlisting}
-%
-%\chapter{第二部分}
-%
-%% Please add the following required packages to your document preamble:
-%% \usepackage{booktabs}
-%\begin{table}[]
-%    \centering
-%    \caption{测试结果}
-%    \label{tab:my-table}
-%    \begin{tabular}{@{}cc@{}}
-%    \toprule
-%    算法 & 准确率 \\ \midrule
-%    I & 0.7684 \\
-%    II & 0.7865 \\
-%    III & 0.7655 \\ \bottomrule
-%    \end{tabular}
-%\end{table}
-%
-%\end{appendix}
+使用命令行工具cd到LexicalAnalysysis目录下，执行以下命令：
+\begin{lstlisting}
+g++ code/*.cpp -o Lex
+\end{lstlisting}
+执行成功后，LexicalAnalysis目录下会生成一个Lex可执行文件。
+
+\subsubsection{运行测试程序}
+
+Lex程序在执行时的指令格式为：
+\begin{lstlisting}
+./Lex [filePath]
+\end{lstlisting}
+其中filePath是一个需要进行词法分析的文件。如：要对test/test1.c文件进行词法分析，要执行的指令为：
+\begin{lstlisting}
+./Lex test/test1.c
+\end{lstlisting}
+执行成功后，程序会在标准输出（stdout）输出词法分析的结果。
+
+\subsubsection{测试用例}
+在test文件夹下，有4个C语言源程序文件，它们是为了特定目的编写好的测试用例。res1.txt到res4.txt分别是对这四个C语言源程序文件的词法分析结果。其中：test1.c是一个普通的C语言程序；test2.c是一个拥有一些特殊数字和字符串的C语言程序；test3.c是一个拥有大量特殊的数字，非法数字，非法字符常量的C语言程序；test4.c是一个有大量语法错误的复杂的C语言程序，但是值得注意的是，它并没有任何词法错误。
+
+\section{利用LEX编译程序自动生成词法分析程序}
+\begin{table*}[t]
+\centering
+\caption{不同记号类型及他们对应的正则表达式（部分）}
+\begin{threeparttable}
+\begin{tabular}{|c|c|} \hline
+{\textit{记号类型}}&{\textit{正则表达式}} \\ \hline
+{标识符} & (\_|\{letter\})(\_|\{letter\}|\{digit\})* \\ \hline
+{八进制整数} & 0[0-7]*\{intSuffix\}?\\ \hline
+{二进制整数} & 0(b|B)(0|1)+\{intSuffix\}?\\ \hline
+{十进制整数} & [1-9]\{digit\}*\{intSuffix\}?\\ \hline
+{十进制浮点数} & \{digit\}*((\.\{digit\}*)|((e|E)[-,+]?\{digit\}*)|(\.\{digit\}*)((e|E)[-,+]?\{digit\}*))(f|F|l|L)?\\ \hline
+{十六进制整数} & 0(x|X)\{xDigit\}+\{intSuffix\}?\\ \hline
+{十六进制浮点数} & 0(x|X)\{xDigit\}+(\.\{xDigit\}+)?(p|P)[-,+]?\{digit\}+(f|F|l|L)?\\ \hline
+{字符常量（含错误情况）} & '[$\wedge$']*' \\ \hline
+{字符串常量（含错误情况）} & "(.| |\t)*" \\ \hline
+\end{tabular}
+\textit{注：\\1分隔符，运算符和关键字的定义就是它们本身；\\2字符常量和字符串常量包含了错误情况，是因为需要在对应的处理函数里分析错误；\\3\ letter，digit，xDigit，intSuffix分别代表合法的单个字母，数字，十六进制数字和整数后缀。}
+\end{threeparttable}
+\end{table*}
+\subsection{模块划分与功能介绍}
+\subsubsection{模块划分}
+一个支持flex编译的lex源程序的一般划分为以下几个模块。
+\begin{itemize}
+	\item \textbf{C语言声明}：用于包含所需的头文件和定义全局变量等，会直接复制进lex.yy.c文件。
+	\item \textbf{定义正则表达式}：方便后续使用
+	\item \textbf{规则段}：每一条规则是一个二元组，二元组的第一项是一个正则表达式，二元组的第二项是若干C语言的语句，类似于函数，用于在匹配到对应的正则表达式后执行。
+	\item \textbf{自定义过程}：用户自己定义需要用到的函数等，会直接复制到lex.yy.x的文件尾部。
+\end{itemize}
+在一个lex源程序中，以上部分一般以下述格式排列：
+\begin{lstlisting}[language=C]
+%{
+	// C语言声明
+%}
+	// 定义正则表达式
+%%
+	// 规则段
+%%
+	// 用户自定义过程
+\end{lstlisting}
+
+\subsubsection{C语言声明模块}
+
+与C++实现版本类似，在C语言声明模块，首先定义了一个枚举类型TokenType用于描述记号的类型。然后定义了与之对应的tokenTypeStr数组用于描述记号类型的字面值。
+
+除此之外，line用来记录当前读取到的行数；tokenNum数组用来记录各类不同记号的个数；charNum用来记录源文件的总字符数；col用来记录当前读取到的列数。
+
+\begin{lstlisting}[language=C]
+%{
+enum TokenType
+{
+    Identifier,  // 标志符
+    ConstInt,    // 整数常量
+    ConstFloat,  // 浮点常量
+    ConstChar,   // 字符常量
+    ConstString, // 字符串常量
+    KeyWord,     // 关键字
+    Operator,    // 运算符
+    Seperator,   // 分隔符
+    Error        // 错误标记
+};
+const char * tokenTypeStr[9] = {
+    "Identifier",
+    "Int",
+    "Float",
+    "Char",
+    "String",
+    "KeyWord",
+    "Operator",
+    "Seperator",
+    "Error"
+};
+unsigned int line = 1;
+unsigned int tokenNum[9]={0};
+unsigned int charNum = 0;
+unsigned int col = 1;
+%}
+\end{lstlisting}
+
+\subsubsection{定义正则表达式模块}
+
+定义正则表达式模块主要对应的是C++实现版本中的Reader模块中的分支功能，其中包含着每个类型的记号的正则表达式。因全部定义过于冗长，故选其中重要的几例如表1所示。
+
+\subsubsection{规则段模块}
+
+每当识别出一个记号，便调用其对应的处理函数。其处理函数一般包括以下几个步骤：
+\begin{itemize}
+	\item[1.]检查有无异常；
+	\item[2.]输出记号及其位置，如有异常，输出异常记号和位置；
+	\item[3.]更新统计信息：行数，列数，字符总数，记号数。
+\end{itemize}
+
+记号（包括各类记号和异常记号）一般采用如上流程处理。遇到注释需要采用特殊的处理函数处理。
+
+\textbf{处理注释 }在处理注释时采用了类似C++实现版本中的逻辑：
+\begin{itemize}
+	\item 若匹配到"//"，则不断调用input()函数获取下一个字符，直到遇到换行符。期间注意更新统计信息和处理换行事件。
+	\item 若匹配到"/*"，则不断调用input()函数获取下一个字符，直到遇到"*/。期间注意更新统计信息和处理换行事件。
+\end{itemize}
+
+\subsubsection{自定义过程模块}
+
+在该模块一共定义了两个函数：main()函数和yywrap()函数。
+
+\textbf{main() }main()函数主要负责从命令行获取文件路径参数，然后调用yylex()进行词法分析，最后计算统计信息并输出。
+
+\textbf{yywrap() }yywrap()函数主要负责同时处理多个文件时使用，目前本程序只支持同时处理单个文件，所以该函数永远返回1。
+
+\subsection{测试程序}
+\subsubsection{编译程序}
+
+使用命令行工具cd到LexicalAnalysysis目录下，先执行以下命令将LEX源文件编译为C语言源程序文件：
+\begin{lstlisting}
+flex -o clex.c flex/clex.l
+\end{lstlisting}
+执行成功后，LexicalAnalysis目录下会生成一个clex.c文件。
+然后编译这个C语言源程序文件：
+\begin{lstlisting}
+gcc clex.c -o CLex
+\end{lstlisting}
+执行成功后，LexicalAnalysis目录下会生成一个CLex可执行文件。
+\subsubsection{运行测试程序}
+
+CLex程序在执行时的指令格式为：
+\begin{lstlisting}
+./CLex [filePath]
+\end{lstlisting}
+其中filePath是一个需要进行词法分析的文件。如：要对test/test1.c文件进行词法分析，要执行的指令为：
+\begin{lstlisting}
+./CLex test/test1.c
+\end{lstlisting}
+执行成功后，程序会在标准输出（stdout）输出词法分析的结果。
+
+\subsubsection{测试用例}
+为了保证Lex版本和C++版本的等价性，Lex实现版本使用的测试用例与C++实现版本所使用的测试用例一致，依然为test文件夹下的4个C语言源程序文件。lex1.txt到lex4.txt分别是对这四个C语言源程序文件的词法分析结果。它们与C++实现版本的区别在于，C++版本对于某些Token的属性有重命名，比如将“(”命名为“Left Parenthesis”，而在Lex版本中，则会直接输出“(”。除此之外对于非法数字的处理略有区别，但是不会影响合法数字的识别。
+\section{实验总结}
+
+本次实验我使用了C++和flex编译程序两种方式实现了C语言的词法分析程序。实现的每个细节里都倾注了我的思考。在设计C++版本的总体架构时，我考虑了是否要全局采用自动机的方式实现，后来注意到数字部分的复杂性，故采用了“总体自动机，局部模式匹配”的方案，最后在保证了代码不至于太过于繁杂的前提下实现了较全面的数字记号识别。类似这样的思考还有很多，它们锻炼了我对程序的总体架构能力。虽然在之前的形式语言与自动机课程中学习过一部分关于正则表达式的知识，但是在实现Lex版本时，还是发现了计算机识别的正则表达式与课本上大有不同。经过一番系统的学习，最终设计出了一套可以识别C语言所有记号的法则。这个过程充满了成就感。
+
+本次实验花费了我超出预计很多倍的时间，但同时也是一次完美的实践与理论相结合的经历，我受益颇丰。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{document}

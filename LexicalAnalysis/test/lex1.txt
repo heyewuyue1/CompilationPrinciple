@@ -1,0 +1,38 @@
+<KeyWord, int>:1:1
+<Identifier, main>:1:5
+<Seperator, (>:1:9
+<Seperator, )>:1:10
+<Seperator, {>:2:1
+<KeyWord, int>:3:5
+<Identifier, a>:3:9
+<Operator, =>:3:11
+<Int, 10>:3:13
+<Seperator, ;>:3:15
+<KeyWord, int>:4:5
+<Identifier, b>:4:9
+<Operator, =>:4:11
+<Int, 10>:4:13
+<Seperator, ;>:4:15
+<Identifier, a>:5:5
+<Operator, =>:5:7
+<Identifier, a>:5:9
+<Operator, +>:5:11
+<Identifier, b>:5:13
+<Seperator, ;>:5:14
+<KeyWord, return>:6:5
+<Int, 0>:6:12
+<Seperator, ;>:6:13
+<Seperator, }>:7:1
+[Statistics]
+Total characters: 75
+Total lines: 7
+Total tokens: 25
+Identifier: 6
+Int: 3
+Float: 0
+Char: 0
+String: 0
+KeyWord: 4
+Operator: 4
+Seperator: 8
+Error: 0

@@ -85,8 +85,7 @@ label:
         ;
 
     printf("%llu\n", 3ul ? 2llu : 45ull);
-    printf("floats \
-%f %lf\n",
+    printf("floats %f %lf\n",
            1.e-2f, (double).356e+3l);
     return x, 0;
 }

@@ -42,6 +42,7 @@ char Buffer::operator[](int loc)
 
 Buffer::~Buffer()
 {
+    sourceFile.close();
     delete[] leftBuffer;
     delete[] rightBuffer;
 }

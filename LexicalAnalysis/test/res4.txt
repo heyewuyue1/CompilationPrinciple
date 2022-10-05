@@ -377,24 +377,24 @@
 <Identifier, printf>:88:5
 <Seperator, Left Parenthesis>:88:11
 <String, floats %f %lf\n>:88:12
-<Seperator, Comma>:89:10
-<Float, 1.e-2f>:90:12
-<Seperator, Comma>:90:18
-<Seperator, Left Parenthesis>:90:20
-<KeyWord, double>:90:21
-<Seperator, Right Parenthesis>:90:27
-<Float, .356e+3l>:90:28
-<Seperator, Right Parenthesis>:90:36
-<Seperator, Semicolon>:90:37
-<KeyWord, return>:91:5
-<Identifier, x>:91:12
-<Seperator, Comma>:91:13
-<Int, 0>:91:15
-<Seperator, Semicolon>:91:16
-<Seperator, Right Brace>:92:1
+<Seperator, Comma>:88:29
+<Float, 1.e-2f>:89:12
+<Seperator, Comma>:89:18
+<Seperator, Left Parenthesis>:89:20
+<KeyWord, double>:89:21
+<Seperator, Right Parenthesis>:89:27
+<Float, .356e+3l>:89:28
+<Seperator, Right Parenthesis>:89:36
+<Seperator, Semicolon>:89:37
+<KeyWord, return>:90:5
+<Identifier, x>:90:12
+<Seperator, Comma>:90:13
+<Int, 0>:90:15
+<Seperator, Semicolon>:90:16
+<Seperator, Right Brace>:91:1
 [Statistics]
-Total characters: 1663
-Total lines: 92
+Total characters: 1661
+Total lines: 91
 Total tokens: 394
 Identifier: 104
 Int: 20
