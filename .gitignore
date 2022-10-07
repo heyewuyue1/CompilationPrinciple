@@ -1,3 +1,4 @@
 .vscode/
 .texpadtemp/
+*.zip
 .DS_Store
