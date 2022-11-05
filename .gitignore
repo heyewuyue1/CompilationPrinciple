@@ -2,3 +2,5 @@
 .texpadtemp/
 *.zip
 .DS_Store
+.fleet/
+

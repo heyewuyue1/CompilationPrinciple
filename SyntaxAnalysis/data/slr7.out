@@ -1,0 +1,395 @@
+Predict Table:
+  E  T  F  a  b  (  )  num  $  
+0 1 2 3 -1 -1 S4 -1 S5 -1 
+1 -1 -1 -1 S6 -1 -1 -1 -1 ACC0 
+2 -1 -1 -1 R2 S7 -1 R2 -1 R2 
+3 -1 -1 -1 R4 R4 -1 R4 -1 R4 
+4 8 2 3 -1 -1 S4 -1 S5 -1 
+5 -1 -1 -1 R6 R6 -1 R6 -1 R6 
+6 -1 9 3 -1 -1 S4 -1 S5 -1 
+7 -1 -1 10 -1 -1 S4 -1 S5 -1 
+8 -1 -1 -1 S6 -1 -1 S11 -1 -1 
+9 -1 -1 -1 R1 S7 -1 R1 -1 R1 
+10 -1 -1 -1 R3 R3 -1 R3 -1 R3 
+11 -1 -1 -1 R5 R5 -1 R5 -1 R5 
+[StateStack]: 0 
+[SymbolStack]: $ 
+[Left string]: (((((1+(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 4
+
+[StateStack]: 0 4 
+[SymbolStack]: $ ( 
+[Left string]: ((((1+(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 4
+
+[StateStack]: 0 4 4 
+[SymbolStack]: $ ( ( 
+[Left string]: (((1+(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 4
+
+[StateStack]: 0 4 4 4 
+[SymbolStack]: $ ( ( ( 
+[Left string]: ((1+(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 4
+
+[StateStack]: 0 4 4 4 4 
+[SymbolStack]: $ ( ( ( ( 
+[Left string]: (1+(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 4
+
+[StateStack]: 0 4 4 4 4 4 
+[SymbolStack]: $ ( ( ( ( ( 
+[Left string]: 1+(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 4 4 5 
+[SymbolStack]: $ ( ( ( ( ( num 
+[Left string]: +(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 4 4 3 
+[SymbolStack]: $ ( ( ( ( ( F 
+[Left string]: +(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 4 2 
+[SymbolStack]: $ ( ( ( ( ( T 
+[Left string]: +(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 2
+
+[StateStack]: 0 4 4 4 4 4 8 
+[SymbolStack]: $ ( ( ( ( ( E 
+[Left string]: +(2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 
+[SymbolStack]: $ ( ( ( ( ( E a 
+[Left string]: (2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 4
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 
+[SymbolStack]: $ ( ( ( ( ( E a ( 
+[Left string]: 2-(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 5 
+[SymbolStack]: $ ( ( ( ( ( E a ( num 
+[Left string]: -(3*4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 3 
+[SymbolStack]: $ ( ( ( ( ( E a ( F 
+[Left string]: -(3*4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 2 
+[SymbolStack]: $ ( ( ( ( ( E a ( T 
+[Left string]: -(3*4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 2
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 
+[SymbolStack]: $ ( ( ( ( ( E a ( E 
+[Left string]: -(3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a 
+[Left string]: (3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 4
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( 
+[Left string]: 3*4)/5)+6)-7)*8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 5 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( num 
+[Left string]: *4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 3 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( F 
+[Left string]: *4)/5)+6)-7)*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 2 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( T 
+[Left string]: *4)/5)+6)-7)*8))/9)$
+[Action]: Shift 7
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 2 7 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( T b 
+[Left string]: 4)/5)+6)-7)*8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 2 7 5 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( T b num 
+[Left string]: )/5)+6)-7)*8))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 2 7 10 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( T b F 
+[Left string]: )/5)+6)-7)*8))/9)$
+[Action]: Reduce 3
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 2 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( T 
+[Left string]: )/5)+6)-7)*8))/9)$
+[Action]: Reduce 2
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 8 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( E 
+[Left string]: )/5)+6)-7)*8))/9)$
+[Action]: Shift 11
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 4 8 11 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a ( E ) 
+[Left string]: /5)+6)-7)*8))/9)$
+[Action]: Reduce 5
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 3 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a F 
+[Left string]: /5)+6)-7)*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 9 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a T 
+[Left string]: /5)+6)-7)*8))/9)$
+[Action]: Shift 7
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 9 7 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a T b 
+[Left string]: 5)+6)-7)*8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 9 7 5 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a T b num 
+[Left string]: )+6)-7)*8))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 9 7 10 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a T b F 
+[Left string]: )+6)-7)*8))/9)$
+[Action]: Reduce 3
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 6 9 
+[SymbolStack]: $ ( ( ( ( ( E a ( E a T 
+[Left string]: )+6)-7)*8))/9)$
+[Action]: Reduce 1
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 
+[SymbolStack]: $ ( ( ( ( ( E a ( E 
+[Left string]: )+6)-7)*8))/9)$
+[Action]: Shift 11
+
+[StateStack]: 0 4 4 4 4 4 8 6 4 8 11 
+[SymbolStack]: $ ( ( ( ( ( E a ( E ) 
+[Left string]: +6)-7)*8))/9)$
+[Action]: Reduce 5
+
+[StateStack]: 0 4 4 4 4 4 8 6 3 
+[SymbolStack]: $ ( ( ( ( ( E a F 
+[Left string]: +6)-7)*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 4 8 6 9 
+[SymbolStack]: $ ( ( ( ( ( E a T 
+[Left string]: +6)-7)*8))/9)$
+[Action]: Reduce 1
+
+[StateStack]: 0 4 4 4 4 4 8 
+[SymbolStack]: $ ( ( ( ( ( E 
+[Left string]: +6)-7)*8))/9)$
+[Action]: Shift 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 
+[SymbolStack]: $ ( ( ( ( ( E a 
+[Left string]: 6)-7)*8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 4 4 8 6 5 
+[SymbolStack]: $ ( ( ( ( ( E a num 
+[Left string]: )-7)*8))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 4 4 8 6 3 
+[SymbolStack]: $ ( ( ( ( ( E a F 
+[Left string]: )-7)*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 4 8 6 9 
+[SymbolStack]: $ ( ( ( ( ( E a T 
+[Left string]: )-7)*8))/9)$
+[Action]: Reduce 1
+
+[StateStack]: 0 4 4 4 4 4 8 
+[SymbolStack]: $ ( ( ( ( ( E 
+[Left string]: )-7)*8))/9)$
+[Action]: Shift 11
+
+[StateStack]: 0 4 4 4 4 4 8 11 
+[SymbolStack]: $ ( ( ( ( ( E ) 
+[Left string]: -7)*8))/9)$
+[Action]: Reduce 5
+
+[StateStack]: 0 4 4 4 4 3 
+[SymbolStack]: $ ( ( ( ( F 
+[Left string]: -7)*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 2 
+[SymbolStack]: $ ( ( ( ( T 
+[Left string]: -7)*8))/9)$
+[Action]: Reduce 2
+
+[StateStack]: 0 4 4 4 4 8 
+[SymbolStack]: $ ( ( ( ( E 
+[Left string]: -7)*8))/9)$
+[Action]: Shift 6
+
+[StateStack]: 0 4 4 4 4 8 6 
+[SymbolStack]: $ ( ( ( ( E a 
+[Left string]: 7)*8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 4 8 6 5 
+[SymbolStack]: $ ( ( ( ( E a num 
+[Left string]: )*8))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 4 8 6 3 
+[SymbolStack]: $ ( ( ( ( E a F 
+[Left string]: )*8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 4 8 6 9 
+[SymbolStack]: $ ( ( ( ( E a T 
+[Left string]: )*8))/9)$
+[Action]: Reduce 1
+
+[StateStack]: 0 4 4 4 4 8 
+[SymbolStack]: $ ( ( ( ( E 
+[Left string]: )*8))/9)$
+[Action]: Shift 11
+
+[StateStack]: 0 4 4 4 4 8 11 
+[SymbolStack]: $ ( ( ( ( E ) 
+[Left string]: *8))/9)$
+[Action]: Reduce 5
+
+[StateStack]: 0 4 4 4 3 
+[SymbolStack]: $ ( ( ( F 
+[Left string]: *8))/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 4 2 
+[SymbolStack]: $ ( ( ( T 
+[Left string]: *8))/9)$
+[Action]: Shift 7
+
+[StateStack]: 0 4 4 4 2 7 
+[SymbolStack]: $ ( ( ( T b 
+[Left string]: 8))/9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 4 4 2 7 5 
+[SymbolStack]: $ ( ( ( T b num 
+[Left string]: ))/9)$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 4 4 2 7 10 
+[SymbolStack]: $ ( ( ( T b F 
+[Left string]: ))/9)$
+[Action]: Reduce 3
+
+[StateStack]: 0 4 4 4 2 
+[SymbolStack]: $ ( ( ( T 
+[Left string]: ))/9)$
+[Action]: Reduce 2
+
+[StateStack]: 0 4 4 4 8 
+[SymbolStack]: $ ( ( ( E 
+[Left string]: ))/9)$
+[Action]: Shift 11
+
+[StateStack]: 0 4 4 4 8 11 
+[SymbolStack]: $ ( ( ( E ) 
+[Left string]: )/9)$
+[Action]: Reduce 5
+
+[StateStack]: 0 4 4 3 
+[SymbolStack]: $ ( ( F 
+[Left string]: )/9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 4 2 
+[SymbolStack]: $ ( ( T 
+[Left string]: )/9)$
+[Action]: Reduce 2
+
+[StateStack]: 0 4 4 8 
+[SymbolStack]: $ ( ( E 
+[Left string]: )/9)$
+[Action]: Shift 11
+
+[StateStack]: 0 4 4 8 11 
+[SymbolStack]: $ ( ( E ) 
+[Left string]: /9)$
+[Action]: Reduce 5
+
+[StateStack]: 0 4 3 
+[SymbolStack]: $ ( F 
+[Left string]: /9)$
+[Action]: Reduce 4
+
+[StateStack]: 0 4 2 
+[SymbolStack]: $ ( T 
+[Left string]: /9)$
+[Action]: Shift 7
+
+[StateStack]: 0 4 2 7 
+[SymbolStack]: $ ( T b 
+[Left string]: 9)$
+[Action]: Shift 5
+
+[StateStack]: 0 4 2 7 5 
+[SymbolStack]: $ ( T b num 
+[Left string]: )$
+[Action]: Reduce 6
+
+[StateStack]: 0 4 2 7 10 
+[SymbolStack]: $ ( T b F 
+[Left string]: )$
+[Action]: Reduce 3
+
+[StateStack]: 0 4 2 
+[SymbolStack]: $ ( T 
+[Left string]: )$
+[Action]: Reduce 2
+
+[StateStack]: 0 4 8 
+[SymbolStack]: $ ( E 
+[Left string]: )$
+[Action]: Shift 11
+
+[StateStack]: 0 4 8 11 
+[SymbolStack]: $ ( E ) 
+[Left string]: $
+[Action]: Reduce 5
+
+[StateStack]: 0 3 
+[SymbolStack]: $ F 
+[Left string]: $
+[Action]: Reduce 4
+
+[StateStack]: 0 2 
+[SymbolStack]: $ T 
+[Left string]: $
+[Action]: Reduce 2
+
+[StateStack]: 0 1 
+[SymbolStack]: $ E 
+[Left string]: $
+[Action]: Accept 0
+
+Accept.
